@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-// Bank Account Class
 class BankAccount {
     private double balance;
 
@@ -26,7 +25,6 @@ class BankAccount {
     }
 }
 
-// ATM Class
 class ATM {
     private BankAccount userAccount;
 
@@ -77,24 +75,14 @@ class ATM {
     }
 }
 
-// Main class
 public class Main {
     public static void main(String[] args) {
-        // Initialize bank account with an initial balance
         BankAccount userAccount = new BankAccount(1000.0);
-
-        // Create ATM instance and connect it with the user's bank account
         ATM atmMachine = new ATM(userAccount);
-
-        // Display ATM menu
         atmMachine.displayMenu();
-
-        // Get user input for option
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter option: ");
         int userOption = scanner.nextInt();
-
-        // Process user's chosen option
         atmMachine.processOption(userOption);
     }
 }
